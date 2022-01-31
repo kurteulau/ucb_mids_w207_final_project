@@ -2,6 +2,11 @@
 ## ucb_mids_w207_final_project
 ## Spring 2022
 
+<br>
+
+# Data Sources
+* [Year 2020 US Energy Information Administration Form EIA-860](https://www.eia.gov/electricity/data/eia860/)
+
 # Project Organization
 
     ├── LICENSE
