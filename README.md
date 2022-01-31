@@ -6,6 +6,8 @@
 
 # Data Sources
 * [Year 2020 US Energy Information Administration Form EIA-860](https://www.eia.gov/electricity/data/eia860/)
+* [EIA Data Browser](https://www.eia.gov/beta/electricity/data/browser)
+* [Open Energy Data Initiative Solar-to-Grid Public Data File for Utility-scale (UPV) and Distributed Photovoltaics (DPV) ](https://data.openei.org/submissions/4503)
 
 # Project Organization
 
