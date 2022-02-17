@@ -6,6 +6,7 @@
 
 # Data Sources
 Driven Data On Cloud N Competition (instructions on how to access to data after closure of competition still forthcoming).
+There are 11,748 chips, each with 4 .tif images.
 
 # Project Organization
 
