@@ -24,3 +24,7 @@ There are 11,748 chips, each with 4 .tif images.
 
 
 Repository structured based on [cookiecutter data science](https://drivendata.github.io/cookiecutter-data-science).
+
+# Environment
+
+`references/planetary-computer-containers` has almost all files from Microsoft's `pangeo` [environment](https://github.com/microsoft/planetary-computer-containers/blob/main/gpu-pytorch/environment.yml) built using `gpu-pytorch`, excluding some git files to prevent version control errors.
