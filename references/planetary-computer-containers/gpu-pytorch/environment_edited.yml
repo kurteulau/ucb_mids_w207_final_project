@@ -5,10 +5,11 @@ channels:
 dependencies:
  - python=3.8*
  - pangeo-notebook=2021.11.23
- - pip=20:
-   - pytorch-gpu
-   - torchvision==0.10.1=py38cuda102h1e64cea_0_cuda
-   - cupy
+ - pip=20: # Altered by Kurt
+   - pytorch-gpu # Added
+   - torchvision==0.10.1=py38cuda102h1e64cea_0_cuda # Added
+   - cupy # Added
+   - pandas_path # Added
  - adlfs
  - awscli
  - boto3
@@ -117,4 +118,6 @@ dependencies:
  - shapely
  - timm
  - torchgeo
-
+# Added by Kurt
+ - pytorch_lightning
+ - torch
