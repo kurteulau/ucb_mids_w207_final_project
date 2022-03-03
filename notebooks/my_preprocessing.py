@@ -79,8 +79,8 @@ def train_val_test_split(df, column='location', pct_train=0.6, pct_val=0.2, pct_
         col_df_test = col_df_shuffled.iloc[split_2:]
 
         # Add on the selections for train, val, and test
-        train = pd.concat(objs=[train, col_df_train])
-        val = pd.concat(objs=[val, col_df_val])
-        test = pd.concat(objs=[test, col_df_test])
+        train = pd.concat(objs=[train, col_df_train]).reset_index(drop=True)
+        val = pd.concat(objs=[val, col_df_val]).reset_index(drop=True)
+        test = pd.concat(objs=[test, col_df_test]).reset_index(drop=True)
 
     return train, val, test
