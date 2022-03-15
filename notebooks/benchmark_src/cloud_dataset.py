@@ -4,6 +4,7 @@ import rasterio
 import torch
 from typing import Optional, List
 
+
 class CloudDataset(torch.utils.data.Dataset):
     """Reads in images, transforms pixel values, and serves a
     dictionary containing chip ids, image tensors, and

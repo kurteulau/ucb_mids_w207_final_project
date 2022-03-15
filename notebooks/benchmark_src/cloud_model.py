@@ -1,9 +1,9 @@
 from typing import Optional, List
+
 import pandas as pd
 import pytorch_lightning as pl
 import segmentation_models_pytorch as smp
 import torch
-from benchmark_src.cloud_dataset import CloudDataset
 
 try:
     from cloud_dataset import CloudDataset
@@ -11,6 +11,7 @@ try:
 except ImportError:
     from benchmark_src.cloud_dataset import CloudDataset
     from benchmark_src.losses import intersection_over_union
+
 
 class CloudModel(pl.LightningModule):
     def __init__(
@@ -55,7 +56,7 @@ class CloudModel(pl.LightningModule):
         self.learning_rate = self.hparams.get("lr", 1e-3)
         self.patience = self.hparams.get("patience", 4)
         self.num_workers = self.hparams.get("num_workers", 2)
-        self.batch_size = self.hparams.get("batch_size", 16)
+        self.batch_size = self.hparams.get("batch_size", 32)
         self.gpu = self.hparams.get("gpu", False)
         self.transform = None
 
