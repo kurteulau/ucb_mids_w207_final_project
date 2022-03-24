@@ -3,6 +3,9 @@ import pandas as pd
 import pytorch_lightning as pl
 import segmentation_models_pytorch as smp
 import torch
+import albumentations as A # ADDED
+import torchvision # ADDED
+
 from benchmark_src.cloud_dataset import CloudDataset
 
 try:
@@ -57,8 +60,11 @@ class CloudModel(pl.LightningModule):
         self.num_workers = self.hparams.get("num_workers", 2)
         self.batch_size = self.hparams.get("batch_size", 16)
         self.gpu = self.hparams.get("gpu", False)
-        self.transform = None
-
+        
+        # ADDED BRIGHTNESS/CONTRAST TRANSFORMATION WITH DEFAULT COLORJITTER PARAMS
+        self.transform = A.Compose([A.ColorJitter()])
+        #self.transform = torchvision.transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2)
+        
         # Instantiate datasets, model, and trainer params if provided
         self.train_dataset = CloudDataset(
             x_paths=x_train,

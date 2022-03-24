@@ -51,7 +51,7 @@ class CloudDataset(torch.utils.data.Dataset):
         if self.transforms:
             x_arr = self.transforms(image=x_arr)["image"]
         x_arr = np.transpose(x_arr, [2, 0, 1]) # re-orders array to match expected format needed for model
-
+        
         # Prepare dictionary for item
         item = {"chip_id": img.chip_id, "chip": x_arr}
 
