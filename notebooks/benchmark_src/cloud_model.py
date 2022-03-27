@@ -61,9 +61,9 @@ class CloudModel(pl.LightningModule):
         self.batch_size = self.hparams.get("batch_size", 16)
         self.gpu = self.hparams.get("gpu", False)
         
-        # ADDED BRIGHTNESS/CONTRAST TRANSFORMATION WITH DEFAULT COLORJITTER PARAMS
-        self.transform = A.Compose([A.ColorJitter()])
-        #self.transform = torchvision.transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2)
+        # Apply ColorJitter using NOT default params
+        self.transform = A.Compose([A.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2, always_apply=True, p=1),
+                                    A.VerticalFlip()])
         
         # Instantiate datasets, model, and trainer params if provided
         self.train_dataset = CloudDataset(
