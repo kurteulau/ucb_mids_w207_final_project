@@ -14,7 +14,7 @@ Satellite images taken at 4 different bandwidths from the Copernicus Sentinel-2 
         ├── archive                         <- Old code from preivous iterations of notebooks
         ├── benchmark_src                   <- Python files returned from running a model
         └── lightning_logs                  <- Logs resulting from PyTorch Lighting
-    ├── references                          
+    └── references                          
         ├── planetary-computer-containers   <- Pre-loaded containers from Planetary Computer
         └── identify_mis_labeled_chips      <- Code, PNGs, CSVs used to find bad chips
 
