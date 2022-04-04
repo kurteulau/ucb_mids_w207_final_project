@@ -1,30 +1,24 @@
 # UC Berkeley MIDS W207 Applied Machine Learning Final Project
-## ucb_mids_w207_final_project
 ## Spring 2022
 
 <br>
 
 # Data Sources
-Driven Data On Cloud N Competition (instructions on how to access to data after closure of competition still forthcoming).
-There are 11,748 chips, each with 4 .tif images.
+Satellite images taken at 4 different bandwidths from the Copernicus Sentinel-2 mission stored on Microsoft Planetary Computer. In total, there are 11,748 chips, each with 5 items: 4 .tif images for each bandwidth and a label mask that details which pixels are cloud pixels and which are not cloud pixels.
 
 # Project Organization
 
     ├── LICENSE
-    ├── README.md          <- The top-level README describing the project aims
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   └── processed      <- The final, canonical data sets for modeling.
-    ├── notebooks          <- Jupyter notebooks. 
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    └── src                <- Source code for use in this project.
-        └── data           <- Scripts to download or generate data
+    ├── README.md                           <- The top-level README describing the project
+    ├── notebooks                           <- Jupyter notebooks
+        ├── archive                         <- Old code from preivous iterations of notebooks
+        ├── benchmark_src                   <- Python files returned from running a model
+        └── lightning_logs                  <- Logs resulting from PyTorch Lighting
+    ├── references                          
+        ├── planetary-computer-containers   <- Pre-loaded containers from Planetary Computer
+        └── identify_mis_labeled_chips      <- Code, PNGs, CSVs used to find bad chips
 
-
-Repository structured based on [cookiecutter data science](https://drivendata.github.io/cookiecutter-data-science).
 
 # Environment
 
-`references/planetary-computer-containers` has almost all files from Microsoft's `pangeo` [environment](https://github.com/microsoft/planetary-computer-containers/blob/main/gpu-pytorch/environment.yml) built using `gpu-pytorch`, excluding some git files to prevent version control errors.
+All files run in Microsoft Planetary Computer when `PyTorch - GPU` option is selected.
